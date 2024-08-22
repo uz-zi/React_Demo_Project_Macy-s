@@ -1,24 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
+import Head1 from "./componenets/header1.jsx";
+import List1 from "./componenets/kids&baby_list.jsx";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Head1/>
+
+<List1/>
     </div>
+    
   );
 }
 
