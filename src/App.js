@@ -1,13 +1,14 @@
 import './App.css';
 import Head1 from "./componenets/header1.jsx";
-import List1 from "./componenets/kids&baby_list.jsx";
+import Head2 from "./componenets/header2.jsx"
+import Footer from "./componenets/footer.jsx"
 
 function App() {
   return (
     <div>
       <Head1/>
-
-<List1/>
+      <Head2/>
+      <Footer/>
     </div>
     
   );
