@@ -108,7 +108,7 @@ function Nav1() {
       </div>
 
       <div
-        className="absolute top-[120px] left-0 right-0 bg-white active mt-5"
+        className="absolute top-[120px] left-0 right-0 bg-white active mt-5 z-30"
         onMouseEnter={() => setHoveredItem(hoveredItem)}
         onMouseLeave={handleMouseLeave} 
       >

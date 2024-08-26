@@ -5,7 +5,7 @@ import List1 from "./Men's Clothing&Accessories_AllMen'sClothing_Shirts&hrefps_D
 import CategoryList from "./categories.jsx";
 import Filters from "./filters.jsx"
 import ProductCard from './product_card.jsx';
-import Cradtest from "./card_test.jsx"
+import Cradtest from "./product_card.jsx"
 
 const DressShirtsPage = () => {
   return (

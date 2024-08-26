@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import pic1 from "../images/chat.png";
-import pic2 from "../images/logo.png";
+import pic1 from "../images/10631691_fpx.png";
+import pic2 from "../images/27024606_fpx.png";
 import pic3 from "../images/8982930_fpx.png";
 import pic4 from "../images/28794642_fpx.png";
 import pic5 from "../images/27024606_fpx.png";
@@ -109,30 +109,6 @@ const ProductDisplay = () => {
     }, {})
   );
 
-  // Function to handle left arrow click
-  const handlePrevImage = (productId) => {
-    const productImages = Object.keys(products.find((product) => product.id === productId).images);
-    const currentIndex = productImages.indexOf(currentImages[productId]);
-    if (currentIndex > 0) {
-      setCurrentImages({
-        ...currentImages,
-        [productId]: productImages[currentIndex - 1],
-      });
-    }
-  };
-
-  // Function to handle right arrow click
-  const handleNextImage = (productId) => {
-    const productImages = Object.keys(products.find((product) => product.id === productId).images);
-    const currentIndex = productImages.indexOf(currentImages[productId]);
-    if (currentIndex < productImages.length - 1) {
-      setCurrentImages({
-        ...currentImages,
-        [productId]: productImages[currentIndex + 1],
-      });
-    }
-  };
-
   // Function to handle color hover to change image
   const handleColorHover = (productId, imageSrc) => {
     setCurrentImages({
@@ -143,7 +119,9 @@ const ProductDisplay = () => {
 
   // Function to reset image on mouse leave
   const resetImage = (productId) => {
-    const firstImageSrc = Object.keys(products.find((product) => product.id === productId).images)[0];
+    const firstImageSrc = Object.keys(
+      products.find((product) => product.id === productId).images
+    )[0];
     setCurrentImages({
       ...currentImages,
       [productId]: firstImageSrc,
@@ -151,59 +129,53 @@ const ProductDisplay = () => {
   };
 
   return (
-    <div className="p-4 max-w-7xl mx-auto">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    <div className="max-w-8xl ml-4 mt-8 mr-4">
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {products.map((product, index) => (
-          <div key={product.id} className="border p-4">
+          <div key={product.id} className="p-1">
             {/* Picture Section */}
-            <div className="relative h-40">
+            <div className="h-45">
               <img
                 src={currentImages[product.id]}
                 alt={`Product ${index + 1}`}
                 className="w-full h-full object-cover"
               />
-              <div className="absolute top-1/2 left-0 transform -translate-y-1/2">
-                <button
-                  onClick={() => handlePrevImage(product.id)}
-                  className="bg-white rounded-full shadow-md p-2"
-                  disabled={Object.keys(product.images).indexOf(currentImages[product.id]) === 0}
-                >
-                  &lt; {/* Left Arrow */}
-                </button>
-              </div>
-              <div className="absolute top-1/2 right-0 transform -translate-y-1/2">
-                <button
-                  onClick={() => handleNextImage(product.id)}
-                  className="bg-white rounded-full shadow-md p-2"
-                  disabled={
-                    Object.keys(product.images).indexOf(currentImages[product.id]) === Object.keys(product.images).length - 1
-                  }
-                >
-                  &gt; {/* Right Arrow */}
-                </button>
-              </div>
             </div>
 
-            <div className="flex justify-center mt-4">
-                {Object.keys(product.images).map((imageSrc, index) => (
-                  <button
-                    key={index}
-                    className={`w-8 h-8 rounded-full border-2 m-1 ${
-                      currentImages[product.id] === imageSrc ? "border-black" : "border-gray-300"
-                    }`}
-                    style={{ backgroundColor: "transparent" }} // Set a placeholder color
-                    onMouseEnter={() => handleColorHover(product.id, imageSrc)}
-                    onMouseLeave={() => resetImage(product.id)}
-                  >
-                    <img src={imageSrc} alt={`Color ${index}`} className="w-full h-full object-cover rounded-full" />
-                  </button>
-                ))}
-              </div>
+            {/* color hover */}
+            <div className="flex mt-4 ml-2">
+              {Object.keys(product.images).map((imageSrc, index) => (
+                <button
+                  key={index}
+                  className={`w-7 h-7 rounded-full m-1 p-[2px] ${
+                    index === 0
+                      ? "border border-black"
+                      : "border border-transparent hover:border-gray-300"
+                  }`}
+                  style={{ backgroundColor: "transparent" }}
+                  onMouseEnter={() => handleColorHover(product.id, imageSrc)}
+                  onMouseLeave={() => resetImage(product.id)}
+                >
+                  <img
+                    src={imageSrc}
+                    alt={`Color ${index}`}
+                    className="w-full h-full object-cover rounded-full"
+                  />
+                </button>
+              ))}
+            </div>
+
+
+
 
             {/* Product Information */}
-            <div className="mt-4 text-center">
-              <h2 className="text-lg font-bold hover:underline">{product.brandName}</h2>
-              <p className="text-gray-600 hover:underline">{product.description}</p>
+            <div className="mt-3 ml-3">
+              <h2 className="text-lg font-bold hover:underline">
+                {product.brandName}
+              </h2>
+              <p className="text-gray-600 hover:underline">
+                {product.description}
+              </p>
               <div className="mt-4">
                 <span
                   className={`text-lg ${
@@ -212,27 +184,25 @@ const ProductDisplay = () => {
                 >
                   ${product.price}
                 </span>
+              </div>
+
+              <div>
                 {product.salePrice && (
-                  <span className="text-lg ml-2 ">
-                    ${product.salePrice}
-                  </span>
+                  <span className="text-lg">${product.salePrice}</span>
                 )}
               </div>
 
               {/* Reviews */}
-              <div className="flex justify-center items-center mt-4">
+              <div className="flex">
                 {Array.from({ length: 5 }, (_, index) => (
                   <span
                     key={index}
-                    className={`text-yellow-400 ${
+                    className={`text-balck-400 ${
                       index < product.reviews ? "fas fa-star" : "far fa-star"
                     }`}
                   ></span>
                 ))}
               </div>
-
-              {/* Color Selection */}
-              
             </div>
           </div>
         ))}

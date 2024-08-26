@@ -1,0 +1,46 @@
+/* Custom checkbox styles */
+.custom-checkbox {
+    appearance: none;
+    width: 1.5rem; /* 6 units */
+    height: 1.5rem; /* 6 units */
+    border: 1px solid #d1d5db; /* gray-300 */
+    border-radius: 0.125rem; /* rounded-sm */
+    cursor: pointer;
+    position: relative;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Hide default checkmark */
+  .custom-checkbox:checked {
+    background-color: white;
+  }
+  
+  /* Use tick icon */
+  .custom-checkbox:checked::before {
+    content: '\2713'; /* Unicode for the tick icon */
+    font-family: 'Arial', sans-serif; /* Use a font that supports the tick mark */
+    font-size: 1.25rem; /* Adjust size if needed */
+    color: black; /* Color of the tick mark */
+  }
+
+  
+
+  button {
+    position: relative; /* For the circle positioning */
+  }
+  
+  button:hover {
+    cursor: pointer;
+  }
+  
+  button:focus {
+    outline: none; /* Remove the default focus outline */
+  }
+  
+  /* Circle around the selected color */
+  button > div {
+    border-color: black; /* Adjust as needed */
+  }
