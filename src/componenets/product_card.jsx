@@ -1,19 +1,21 @@
 import React, { useState } from "react";
-import { products} from "./all_data.js"
+import { products } from "./all_data.js";
 
-const ProductDisplay = () => {
-  
+const ProductDisplay = ({ fromSideNav }) => {
+  const displayProducts = fromSideNav.length > 0 ? fromSideNav : products;
+  console.log("data coming from sidenav", fromSideNav);
+
   // State to manage current image index for each product
   const [currentImages, setCurrentImages] = useState(
-    products.reduce((acc, product) => {
-      acc[product.id] = Object.keys(product.images)[0]; 
+    displayProducts.reduce((acc, product) => {
+      acc[product.id] = Object.keys(product.images)[0];
       return acc;
     }, {})
   );
 
   // State to manage selected color for each product
   const [selectedColor, setSelectedColor] = useState(
-    products.reduce((acc, product) => {
+    displayProducts.reduce((acc, product) => {
       acc[product.id] = Object.keys(product.images)[0];
       return acc;
     }, {})
@@ -51,7 +53,7 @@ const ProductDisplay = () => {
   return (
     <div className="max-w-8xl ml-4 mt-8 mr-4">
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 font-helvetica">
-        {products.map((product, index) => (
+        {displayProducts.map((product, index) => (
           <div key={product.id} className="p-1">
             {/* Picture Section */}
             <div className="h-45">
@@ -101,7 +103,7 @@ const ProductDisplay = () => {
               <div>
                 {product.salePrice && (
                   <span className="text-lg text-red-500 text-base font-bold">{`Sale $${product.salePrice}`}</span>
-                  )}
+                )}
               </div>
 
               {/* Reviews */}

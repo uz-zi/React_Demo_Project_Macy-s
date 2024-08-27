@@ -1,28 +1,32 @@
 import React, { useState } from 'react';
-import Sidebar from './sidebar';
+import Sidebar from './sidebar.jsx';
 
-const FilterButtons = () => {
-  const buttons = ['All Filters','Brand', 'Price', 'Size', 'Color', 'Top Rated'];
+const FilterButtons = ({ onFilteredProducts }) => {
+  const buttons = ['All Filters', 'Brand', 'Price', 'Size', 'Color', 'Top Rated'];
   const [isOpen, setIsOpen] = useState(false);
   const [selectedButton, setSelectedButton] = useState('');
   const [selectedItem, setSelectedItem] = useState('');
-
   const [isitemOpen, setIsitemOpen] = useState(false);
+  const [filteredProducts, setFilteredProducts] = useState([]);
 
-  // List of featured items
   const items = [
     'Show Featured Items',
-    'Price: low to high', 
+    'Price: low to high',
     'Price: high to low',
     'Top rated',
     'Best seller',
     'New arrivals',
   ];
 
-  // Function to handle button click and open sidebar
   const handleButtonClick = (button) => {
-    setIsOpen(true); // Open the sidebar
-    setSelectedButton(button); // Set the selected button
+    setIsOpen(true);
+    setSelectedButton(button);
+  };
+
+  const handleFilteredProducts = (products) => {
+    console.log('Filtered Products received in FilterButtons:', products); // Log the filtered products
+    setFilteredProducts(products);
+    onFilteredProducts(products); // Pass the data to the parent component
   };
 
   return (
@@ -46,7 +50,7 @@ const FilterButtons = () => {
         >
           {selectedItem || 'Show Featured Items'}
         </button>
-        
+
         {isitemOpen && (
           <ul className="absolute mt-2 w-[170px] bg-gray-500 border border-gray-300 rounded-md">
             {items.map((item, index) => (
@@ -65,8 +69,12 @@ const FilterButtons = () => {
         )}
       </div>
 
-      {/* Pass selectedButton to Sidebar */}
-      <Sidebar openSection={selectedButton} isOpen={isOpen} setIsOpen={setIsOpen} />
+      <Sidebar
+        openSection={selectedButton}
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+        onFilteredProducts={handleFilteredProducts} // Pass the callback function
+      />
     </div>
   );
 };
