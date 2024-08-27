@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Sidebar from './sidebar';
 
 const FilterButtons = () => {
-  const buttons = ['Brand', 'Price', 'Size', 'Color', 'Top Rated'];
+  const buttons = ['All Filters','Brand', 'Price', 'Size', 'Color', 'Top Rated'];
   const [isOpen, setIsOpen] = useState(false);
   const [selectedButton, setSelectedButton] = useState('');
   const [selectedItem, setSelectedItem] = useState('');
@@ -31,7 +31,7 @@ const FilterButtons = () => {
         {buttons.map((button, index) => (
           <button
             key={index}
-            className="px-4 py-2 border-[1px] border-black rounded-lg transition duration-300"
+            className="px-4 py-2 border-[0.5px] border-black rounded-lg transition duration-300 h-[50px]"
             onClick={() => handleButtonClick(button)}
           >
             {button}

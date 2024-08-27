@@ -26,8 +26,6 @@
     color: black; /* Color of the tick mark */
   }
 
-  
-
   button {
     position: relative; /* For the circle positioning */
   }
@@ -42,5 +40,5 @@
   
   /* Circle around the selected color */
   button > div {
-    border-color: black; /* Adjust as needed */
+    border-color: black;
   }

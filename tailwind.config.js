@@ -9,7 +9,7 @@ module.exports = {
         'xs-custom': '14px',
       },
       fontFamily: {
-        'helvetica': [ 'Macys Sans'],
+        'helvetica': ['Helvetica'],
       },
       colors: {
         'custom-gray': '#838383',

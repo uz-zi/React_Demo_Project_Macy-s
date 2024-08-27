@@ -17,7 +17,7 @@ function Nav1() {
 
   return (
     <nav className="h-[120px] border-b-2 mx-3">
-      <div className="upper">
+      <div className="upper font-helvetica">
         <div className="grid grid-cols-12 items-center">
           <div className="col-span-2 flex justify-left">
             <img

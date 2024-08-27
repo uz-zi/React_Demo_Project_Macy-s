@@ -90,7 +90,7 @@ const lists = {
 
 const ListComponent = () => {
     return (
-      <div className="flex flex-row">
+      <div className="flex flex-row text-sm">
         {/* First Column - Girls' and Boys' Lists */}
         <div className="flex flex-col w-1/3 p-4">
           <div className="mb-4">

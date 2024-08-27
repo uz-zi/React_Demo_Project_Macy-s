@@ -1,0 +1,107 @@
+export const filterData = [
+  {
+    name: "Offer",
+    options: [
+      "Limited-Time Special (152)",
+      "Clearance/Closeout (24)",
+      "Last Act (7)",
+      "Offer code ULTIMATE (71)",
+      "Sales & Discounts (170)",
+      "Special Offer (218)",
+    ],
+  },
+  {
+    name: "Sleeve Length",
+    options: ["Short Sleeve", "Long Sleeve"],
+  },
+  {
+    name: "Discount Range",
+    options: [
+      "70% off & more ",
+      "60% off & more ",
+      "50% off & more ",
+      "40% off & more ",
+      "30% off & more ",
+      "20% off & more ",
+    ],
+  },
+  {
+    name: "Brand",
+    options: [
+      "Alfani",
+      "Bar III",
+      "Ben Sherman",
+      "Calvin Klein",
+      "Club Room",
+      "Dylan Park",
+      "Haggar",
+      "Hugo Boss",
+      "Jones New York",
+      "Kenneth Cole Reaction",
+      "Michael Kors",
+      "MICHELSONS OF LONDON",
+      "Nick Graham",
+      "Nine West",
+      "OppoSuits",
+      "Perry Ellis",
+      "Tallia",
+      "Tom Baine",
+      "Van Heusen",
+    ],
+  },
+  {
+    name: "Price",
+    options: [
+      "Under $20",
+      "$20-$40",
+      "$40-$60",
+      "$60-$80",
+      "$80-$100",
+    ],
+  },
+  {
+    name: "Occasion",
+    options: ["Formal", "Wedding", "Work"],
+  },
+  {
+    name: "Age Group",
+    options: ["Adult", "Teen"],
+  },
+  {
+    name: "Available for Registry",
+    options: ["Adult", "Teen"],
+  },
+  {
+    name: "Shirt Fit",
+    options: [
+      "Classic Fit",
+      "Slim Fit",
+      "Extra Slim",
+      "Athletic Fitted",
+    ],
+  },
+  {
+    name: "Color",
+    options: [
+      "Black",
+      "Orange",
+      "Green",
+      "Blue",
+      "Grey",
+      "Purple",
+      "Pink",
+      "Yellow",
+      "White",
+      "Silver",
+      "Red",
+    ],
+  },
+  {
+    name: "toprated",
+    options: ["5", "4"],
+  },
+  {
+    name: "size",
+    options: ["small", "medium"],
+  },
+];

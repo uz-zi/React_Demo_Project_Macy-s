@@ -1,15 +1,15 @@
 import React from 'react';
-//import { FaFacebookF, FaInstagram, FaTwitter, FaThread } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer className="bg-[#1F1F1F] text-white py-8 mt-10">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+    <footer className="bg-[#1F1F1F] text-white mt-10 h-[350px]">
+      <div className="mx-4 pt-[20px]">
+        <div className="flex flex-row gap-[210px] mt-8">
           {/* Customer Service */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Customer Service</h3>
-            <ul className='text-sm'>
+            <h3 className="text-sm font-semibold mb-4">Customer Service</h3>
+            <ul className='space-y-3 text-xs'>
               <li><a href="#" className="hover:underline">Help & FAQs</a></li>
               <li><a href="#" className="hover:underline">Order Tracking</a></li>
               <li><a href="#" className="hover:underline">Shipping & Delivery</a></li>
@@ -22,8 +22,8 @@ const Footer = () => {
           </div>
           {/* Our Stores */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Our Stores</h3>
-            <ul className='text-sm'>
+            <h3 className="text-sm font-semibold mb-4">Our Stores</h3>
+            <ul className='space-y-3 text-xs'>
               <li><a href="#" className="hover:underline">Find a Store</a></li>
               <li><a href="#" className="hover:underline">Tell Us What You Think</a></li>
               <li><a href="#" className="hover:underline">Macy's Backstage</a></li>
@@ -32,8 +32,8 @@ const Footer = () => {
           </div>
           {/* Macy's Inc. */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Macy's Inc.</h3>
-            <ul className='text-sm'>
+            <h3 className="text-sm font-semibold mb-4">Macy's Inc.</h3>
+            <ul className='space-y-3 text-xs'>
               <li><a href="#" className="hover:underline">Corporate Sites</a></li>
               <li><a href="#" className="hover:underline">About Macy's</a></li>
               <li><a href="#" className="hover:underline">News Room</a></li>
@@ -43,16 +43,16 @@ const Footer = () => {
           </div>
           {/* Connect With Us */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Connect With Us</h3>
+            <h3 className="text-sm font-semibold mb-4">Connect With Us</h3>
             <div className="flex space-x-4">
               <a href="#" aria-label="Visit us on Facebook">
-                {/* <FaFacebookF className="text-xl hover:text-gray-400" /> */}
+                <FaFacebookF className="text-xl" />
               </a>
               <a href="#" aria-label="Visit us on Instagram">
-                {/* <FaInstagram className="text-xl hover:text-gray-400" /> */}
+                <FaInstagram className="text-xl "/>
               </a>
               <a href="#" aria-label="Visit us on Twitter">
-                {/* <FaTwitter className="text-xl hover:text-gray-400" /> */}
+                <FaTwitter className="text-xl" />
               </a>
               <a href="#" aria-label="Thread icon">
                 {/* <FaThread className="text-xl hover:text-gray-400" /> */}
@@ -63,7 +63,7 @@ const Footer = () => {
       </div>
 
 
-      <div className="bg-[#000000] text-center text-xs text-white py-6 mt-8">
+      <div className="bg-[#000000] text-center text-xs text-white py-6 mt-[35px] h-[150px]">
         <div className="mb-4">
           <a href="#" className="hover:underline mx-2">Privacy Notice</a>
           <span>|</span>

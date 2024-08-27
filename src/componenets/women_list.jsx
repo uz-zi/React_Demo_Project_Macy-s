@@ -84,11 +84,11 @@ const lists = {
 
 const Women_ListComponent = () => {
   return (
-    <div className="flex flex-row">
+    <div className="flex flex-row text-xs">
       {/* Women's Clothing */}
       <div className="flex flex-col w-1/3 p-4">
         <div className="mb-4">
-          <h2 className="text-xl font-bold mb-2">WOMEN'S CLOTHING</h2>
+          <h2 className="text-base font-bold mb-2">WOMEN'S CLOTHING</h2>
           <ul>
             {lists.womensClothing.map((item, index) => (
               <li key={index} className="mb-1">
@@ -102,7 +102,7 @@ const Women_ListComponent = () => {
       {/* More Sizes */}
       <div className="flex flex-col w-1/3 p-4">
         <div className="mb-4">
-          <h2 className="text-xl font-bold mb-2">MORE SIZES</h2>
+          <h2 className="text-base font-bold mb-2">MORE SIZES</h2>
           <ul>
             {lists.womensSizes.map((item, index) => (
               <li key={index} className="mb-1">
@@ -112,7 +112,7 @@ const Women_ListComponent = () => {
           </ul>
         </div>
         <div className="mb-4">
-          <h2 className="text-xl font-bold mb-2">DRESSES</h2>
+          <h2 className="text-base font-bold mb-2">DRESSES</h2>
           <ul>
             {lists.womensDresses.map((item, index) => (
               <li key={index} className="mb-1">
@@ -122,7 +122,7 @@ const Women_ListComponent = () => {
           </ul>
         </div>
         <div className="mb-4">
-          <h2 className="text-xl font-bold mb-2">OUTDOOR APPAREL & SHOES</h2>
+          <h2 className="text-base font-bold mb-2">OUTDOOR APPAREL & SHOES</h2>
           <ul>
             {lists.womensOutdoor.map((item, index) => (
               <li key={index} className="mb-1">
@@ -132,7 +132,7 @@ const Women_ListComponent = () => {
           </ul>
         </div>
         <div className="mb-4">
-          <h2 className="text-xl font-bold mb-2">CONTEMPORARY</h2>
+          <h2 className="text-base font-bold mb-2">CONTEMPORARY</h2>
           <ul>
             {lists.womensContemporary.map((item, index) => (
               <li key={index} className="mb-1">
@@ -146,7 +146,7 @@ const Women_ListComponent = () => {
       {/* Featured Brands */}
       <div className="flex flex-col w-1/3 p-4">
         <div className="mb-4">
-          <h2 className="text-xl font-bold mb-2">FEATURED BRANDS</h2>
+          <h2 className="text-base font-bold mb-2">FEATURED BRANDS</h2>
           <ul>
             {lists.womensBrands.map((item, index) => (
               <li key={index} className="mb-1">
@@ -160,7 +160,7 @@ const Women_ListComponent = () => {
       {/* Complete Your Look */}
       <div className="flex flex-col w-1/3 p-4">
         <div className="mb-4">
-          <h2 className="text-xl font-bold mb-2">COMPLETE YOUR LOOK</h2>
+          <h2 className="text-base font-bold mb-2">COMPLETE YOUR LOOK</h2>
           <ul>
             {lists.womensCompleteLook.map((item, index) => (
               <li key={index} className="mb-1">
@@ -170,7 +170,7 @@ const Women_ListComponent = () => {
           </ul>
         </div>
         <div className="mb-4">
-          <h2 className="text-xl font-bold mb-2">SHOP BY OCCASION</h2>
+          <h2 className="text-base font-bold mb-2">SHOP BY OCCASION</h2>
           <ul>
             {lists.womensOccasion.map((item, index) => (
               <li key={index} className="mb-1">
@@ -180,7 +180,7 @@ const Women_ListComponent = () => {
           </ul>
         </div>
         <div className="mb-4">
-          <h2 className="text-xl font-bold mb-2"></h2>
+          <h2 className="text-base font-bold mb-2"></h2>
           <ul className="text-red-500">
             {lists.womensSales.map((item, index) => (
               <li key={index} className="mb-1">
@@ -195,7 +195,7 @@ const Women_ListComponent = () => {
       {/* Now Trending */}
       <div className="flex flex-col w-1/3 p-4">
         <div className="mb-4">
-          <h2 className="text-xl font-bold mb-2">NOW TRENDING</h2>
+          <h2 className="text-base font-bold mb-2">NOW TRENDING</h2>
           <ul>
             {lists.womensTrending.map((item, index) => (
               <li key={index} className="mb-1">

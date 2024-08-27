@@ -83,7 +83,7 @@ const lists = {
 
 const Men_ListComponent = () => {
   return (
-    <div className="flex flex-row">
+    <div className="flex flex-row text-sm">
       {/* First Column - Men's Clothing and Activewear */}
       <div className="flex flex-col w-1/3 p-4">
         <div className="mb-4">
