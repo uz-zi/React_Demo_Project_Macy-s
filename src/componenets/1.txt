@@ -106,33 +106,29 @@ const ProductDisplay = ({ fromSideNav }) => {
         {displayProducts.map((product, index) => (
           <div key={product.id} className="p-1 relative">
             {/* Picture Section */}
-            <div className="h-45 relative group">
-  <img
-    src={currentImages[product.id]}
-    alt={`Product ${index + 1}`}
-    className="w-full h-full object-cover"
-  />
-
-  {Object.keys(product.variants).length > 0 && (
-    <>
-      <button
-        onClick={() => handleArrowClick(product.id, 'left')}
-        onMouseLeave={() => resetImage(product.id)}
-        className="absolute top-1/2 left-2  p-2 rounded-full bg-gray-200 text-white opacity-0 group-hover:opacity-100 transition-opacity"
-      >
-        &lt;
-      </button>
-      <button
-        onClick={() => handleArrowClick(product.id, 'right')}
-        onMouseLeave={() => resetImage(product.id)}
-        className="absolute top-1/2 right-2  p-2 rounded-full bg-gray-200 text-white opacity-0 group-hover:opacity-100 transition-opacity"
-      >
-        &gt;
-      </button>
-    </>
-  )}
-</div>
-
+            <div className="h-45 relative">
+              <img
+                src={currentImages[product.id]}
+                alt={`Product ${index + 1}`}
+                className="w-full h-full object-cover"
+              />
+              {Object.keys(product.variants).length > 0 && (
+                <>
+                  <button
+                    onClick={() => handleArrowClick(product.id, 'left')}
+                    className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg hover:bg-gray-200"
+                  >
+                    &lt;
+                  </button>
+                  <button
+                    onClick={() => handleArrowClick(product.id, 'right')}
+                    className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg hover:bg-gray-200"
+                  >
+                    &gt;
+                  </button>
+                </>
+              )}
+            </div>
 
             {/* Color hover */}
             <div className="flex mt-4 ml-2">
