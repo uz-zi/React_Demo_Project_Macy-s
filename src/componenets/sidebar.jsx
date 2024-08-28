@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import "./checkbox_style.css";
 import { filterData } from "./filter_list_data.js";
@@ -9,6 +9,8 @@ const Sidebar = ({ openSection, isOpen, setIsOpen, onFilteredProducts }) => {
   const [selectedOptions, setSelectedOptions] = useState({});
   const [selectedColors, setSelectedColors] = useState(new Set());
   const [filteredCount, setFilteredCount] = useState(0);
+  const [filteredProducts, setFilteredProducts] = useState(allProductsData);
+  const sidebarRef = useRef(null);
 
   useEffect(() => {
     setOpenSections((prevState) => {
@@ -68,7 +70,8 @@ const Sidebar = ({ openSection, isOpen, setIsOpen, onFilteredProducts }) => {
       }
 
       setFilteredCount(filteredProducts.length);
-      onFilteredProducts(filteredProducts); // Pass filtered products to parent
+      //onFilteredProducts(filteredProducts); // Pass filtered products to parent
+      setFilteredProducts(filteredProducts);
       console.log(filteredProducts); 
     };
 
@@ -77,6 +80,7 @@ const Sidebar = ({ openSection, isOpen, setIsOpen, onFilteredProducts }) => {
 
   const handleCloseSidebar = () => {
     setIsOpen(false);
+    onFilteredProducts(filteredProducts);
   };
 
   const toggleSection = (section) => {
@@ -93,19 +97,7 @@ const Sidebar = ({ openSection, isOpen, setIsOpen, onFilteredProducts }) => {
       const newSelection = currentSelection.includes(option)
         ? currentSelection.filter((item) => item !== option)
         : [...currentSelection, option];
-
-      if (filterName === "Color") {
-        setSelectedColors((prevColors) => {
-          const updatedColors = new Set(prevColors);
-          if (updatedColors.has(option)) {
-            updatedColors.delete(option);
-          } else {
-            updatedColors.add(option);
-          }
-          return updatedColors;
-        });
-      }
-
+        
       return {
         ...prevState,
         [filterName]: newSelection,
@@ -146,8 +138,26 @@ const Sidebar = ({ openSection, isOpen, setIsOpen, onFilteredProducts }) => {
     });
   };
 
+
+
+  //click outside the naavbar
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+        setIsOpen(false); // Close the sidebar if the click is outside of it
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [setIsOpen]);
+
   return (
     <div
+    ref={sidebarRef}
       className={`fixed top-0 right-0 bottom-0 w-[600px] bg-white p-4 overflow-y-auto shadow-lg px-[50px] transition-transform duration-300 z-50 ${isOpen ? "translate-x-0" : "translate-x-full"}`}
     >
       <div className="mt-10 font-helvetica">

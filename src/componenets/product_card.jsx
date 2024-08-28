@@ -79,7 +79,6 @@ const ProductDisplay = ({ fromSideNav }) => {
                   onMouseLeave={() => resetImage(product.id)}
                   onClick={() => handleColorClick(product.id, imageSrc)}
                 >
-                  {/* Optional: You can add a small icon or text to indicate color */}
                 </button>
               ))}
             </div>
