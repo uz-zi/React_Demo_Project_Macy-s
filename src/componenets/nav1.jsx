@@ -7,6 +7,8 @@ function Nav1() {
   const [selectedCountry, setSelectedCountry] = useState('Pakistan');
   const [selectedCurrency, setSelectedCurrency] = useState('PKR');
 
+  
+
   const handleOpenSidebar = () => {
     setIsSidebarOpen(true);
   };

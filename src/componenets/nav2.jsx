@@ -3,6 +3,7 @@ import logo from "../images/logo.png";
 import WomenList from "./women_list.jsx";
 import MenList from "./men_list.jsx";
 import KidsList from "./kids&baby_list.jsx";
+import { IoSearchOutline } from "react-icons/io5";
 
 function Nav1() {
   const [hoveredItem, setHoveredItem] = useState(null);
@@ -29,13 +30,14 @@ function Nav1() {
           <div className="col-span-2"></div>
 
           <div className="col-span-4">
-            <form className="w-full">
-              <input
-                type="text"
-                className="w-full h-10 rounded-2xl border border-black px-4"
-                placeholder="Search"
-              />
-            </form>
+            <div className="relative w-full">
+    <IoSearchOutline className="absolute top-1/2 left-4 transform -translate-y-1/2 text-xl text-gray-500" />
+    <input
+      type="text"
+      className="w-full h-10 border border-black pl-[45px] pr-10 rounded-full"
+      placeholder="Search"
+    />
+  </div>
           </div>
           <div className="col-span-2"></div>
 

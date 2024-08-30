@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
 
 const DressShirtsPage = () => {
   return (
-    <div className="p-4">
+    <div className="lg:p-4 md:p-8">
       <div className="mb-4 flex items-center space-x-4">
         <a href="/mens-clothing" className="hover:text-gray-500 underline text-xs">
           Men's Clothing & Accessories
@@ -21,15 +21,9 @@ const DressShirtsPage = () => {
           Shirts & hrefps
         </a>
         <span>/</span>
-        {/* <a
-          href="/mens-clothing/all/shirts-hrefps/dress-shirts"
-          
-        >
-          Dress Shirts
-        </a> */}
         <p className="text-gray-500 text-xs">Dress Shirts</p>
         </div >
-      <h1 className="text-2xl font-bold">Men's Dress Shirts (227)</h1>
+      <h1 className="lg:text-2xl font-bold md:text-5xl">Men's Dress Shirts</h1>
     </div>
   );
 };

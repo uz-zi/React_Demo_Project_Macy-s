@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Sidebar from './sidebar.jsx';
 
 const FilterButtons = ({ onFilteredProducts }) => {
-  const buttons = ['All Filters', 'Brand', 'Price', 'Size', 'Color', 'Top Rated'];
+  const buttons = ['All Filters', 'Brand', 'Price', 'Size', 'Color', 'Top Rated',];
   const [isOpen, setIsOpen] = useState(false);
   const [selectedButton, setSelectedButton] = useState('');
   const [selectedItem, setSelectedItem] = useState('');
@@ -30,12 +30,12 @@ const FilterButtons = ({ onFilteredProducts }) => {
   };
 
   return (
-    <div className='mt-5 ml-4 mr-4 flex space-x-4 relative z-10 justify-between'>
-      <div className='flex space-x-4'>
+    <div className='mt-5 lg:ml-4 md:ml-8 mr-4 flex space-x-4 relative z-10 justify-between'>
+      <div className='flex space-x-4 overflow-x-auto md:overflow-x-scroll lg:overflow-hidden'>
         {buttons.map((button, index) => (
           <button
             key={index}
-            className="px-4 py-2 border-[0.5px] border-black rounded-lg transition duration-300 h-[50px]"
+            className="lg:px-4 lg:py-2 lg:border-[0.5px] border-black rounded-lg transition lg:text-base duration-300 lg:h-[50px] md:h-[100px] md:px-8 md:py-4 md:text-2xl border-[1.5px]"
             onClick={() => handleButtonClick(button)}
           >
             {button}
@@ -43,7 +43,7 @@ const FilterButtons = ({ onFilteredProducts }) => {
         ))}
       </div>
 
-      <div className='relative ml-auto'>
+      <div className='relative ml-auto md:hidden'>
         <button
           onClick={() => setIsitemOpen(!isitemOpen)}
           className="px-2 py-2 rounded-lg border-[2px] border-black bg-white text-black w-40 text-sm"

@@ -9,9 +9,9 @@ const CategoryList = () => {
   };
 
   return (
-    <div className="px-4">
+    <div className="lg:px-4 md:px-9 md:space-y-10">
       <div className="flex flex-row space-x-4">
-        <h1 className="text-xl text-base">See All Categories</h1>
+        <h1 className="md:text-2xl lg:text-base">See All Categories</h1>
         <button
           className={`text-xl transition-transform duration-300 ${
             isOpen ? "rotate-180" : "rotate-0"
@@ -44,10 +44,10 @@ const CategoryList = () => {
         </div>
       )}
 
-      <div className="mt-4">
-        <a href="/" class="flex items-center flex-row space-x-2">
-          <img src={Chaticon} alt="Icon" className="w-[20px]" />
-          <p className="text-sm underline py-3">Talk to a Style Expert</p>
+      <div className="mt-4 lg:py-0 md:py-8">
+        <a href="/" class="flex items-center flex-row lg:space-x-2 md:space-x-8">
+          <img src={Chaticon} alt="Icon" className="lg:w-[20px] md:w-[50px]" />
+          <p className="lg:text-sm underline py-3 md:text-3xl">Talk to a Style Expert</p>
         </a>
       </div>
     </div>

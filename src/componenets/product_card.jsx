@@ -101,7 +101,7 @@ const ProductDisplay = ({ fromSideNav }) => {
   };
 
   return (
-    <div className="max-w-8xl ml-4 mt-8 mr-4">
+    <div className="max-w-8xl lg:ml-4 lg:mt-8 lg:mr-4 md:ml-8 md:mt-16 md:mr-8">
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 font-helvetica">
         {displayProducts.map((product, index) => (
           <div key={product.id} className="p-1 relative">
