@@ -4,6 +4,7 @@ import WomenList from "./women_list.jsx";
 import MenList from "./men_list.jsx";
 import KidsList from "./kids&baby_list.jsx";
 import { IoSearchOutline } from "react-icons/io5";
+import { FiShoppingBag } from "react-icons/fi";
 
 function Nav1() {
   const [hoveredItem, setHoveredItem] = useState(null);
@@ -42,7 +43,7 @@ function Nav1() {
           <div className="col-span-2"></div>
 
           <div className="col-span-2 flex justify-end">
-            <img src={logo} alt="Company logo" className="h-20 w-20" />
+            <FiShoppingBag className="h-10 w-10 object-contain"/>
           </div>
         </div>
       </div>
