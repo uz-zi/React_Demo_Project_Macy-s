@@ -45,7 +45,7 @@ const CategoryList = () => {
       )}
 
       <div className="mt-4 lg:py-0 md:py-8">
-        <a href="/" class="flex items-center flex-row lg:space-x-2 md:space-x-8">
+        <a href="/" className="flex items-center flex-row lg:space-x-2 md:space-x-8">
           <img src={Chaticon} alt="Icon" className="lg:w-[20px] md:w-[50px]" />
           <p className="lg:text-sm underline py-3 md:text-3xl">Talk to a Style Expert</p>
         </a>

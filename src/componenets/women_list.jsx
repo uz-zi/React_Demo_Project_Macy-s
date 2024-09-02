@@ -3,6 +3,7 @@ import logo from "../images/logo.png";
 
 const lists = {
   womensClothing: [
+
     { name: "Shop All", path: "/womens-clothing/all" },
     { name: "Active & Workout", path: "/womens-clothing/active-workout" },
     { name: "Blazers", path: "/womens-clothing/blazers" },
@@ -20,7 +21,7 @@ const lists = {
     { name: "Suits & Suit Separates", path: "/womens-clothing/suits-suit-separates" },
     { name: "Sweaters", path: "/womens-clothing/sweaters" },
     { name: "Swimsuits & Cover-Ups", path: "/womens-clothing/swimsuits-cover-ups" },
-    { name: "Tops", path: "/womens-clothing/tops" }
+    { name: "Tops", path: "/womens-clothing/tops" },
   ],
   womensSizes: [
     { name: "Plus Sizes", path: "/womens-sizes/plus" },
@@ -190,6 +191,7 @@ const Women_ListComponent = () => {
           </ul>
         </div>
       </div>
+      
 
 
       {/* Now Trending */}

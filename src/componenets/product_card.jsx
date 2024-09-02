@@ -24,7 +24,7 @@ const ProductDisplay = ({ fromSideNav }) => {
   // State to manage variant for each product
   const [variantIndex, setVariantIndex] = useState(
     displayProducts.reduce((acc, product) => {
-      acc[product.id] = 1; // Default to the first variant
+      acc[product.id] = 1;
       return acc;
     }, {})
   );
