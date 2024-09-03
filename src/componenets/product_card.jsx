@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { products } from "./all_data.js";
 
-const ProductDisplay = ({ fromSideNav }) => {
+const ProductDisplay = ({ fromSideNav =[]}) => {
   const displayProducts = fromSideNav.length > 0 ? fromSideNav : products;
   console.log("data coming from sidenav", fromSideNav);
 

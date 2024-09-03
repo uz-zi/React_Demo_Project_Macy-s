@@ -50,23 +50,23 @@ const Sidebar = ({ openSection, isOpen, setIsOpen, onFilteredProducts }) => {
 
       if (selectedOptions["Color"]) {
         const lowerCaseSelectedColors = selectedOptions["Color"].map(color => color.toLowerCase());
-
+        
         filteredProducts = filteredProducts.filter(product =>
           Object.values(product.images).some(color =>
             lowerCaseSelectedColors.includes(color.toLowerCase())
           )
         );
       }
+      
+      if (selectedOptions["toprated"]) {
+        filteredProducts = filteredProducts.filter(product =>
+          selectedOptions["toprated"].includes(product.reviews.toString())
+        );
+      }
 
       if (selectedOptions["size"]) {
         filteredProducts = filteredProducts.filter(product =>
           selectedOptions["size"].includes(product.size)
-        );
-      }
-
-      if (selectedOptions["toprated"]) {
-        filteredProducts = filteredProducts.filter(product =>
-          selectedOptions["toprated"].includes(product.reviews.toString())
         );
       }
 
@@ -98,13 +98,14 @@ const Sidebar = ({ openSection, isOpen, setIsOpen, onFilteredProducts }) => {
       const newSelection = currentSelection.includes(option)
         ? currentSelection.filter((item) => item !== option)
         : [...currentSelection, option];
-        
+      
       return {
         ...prevState,
         [filterName]: newSelection,
       };
     });
   };
+  
 
   const handleClearAll = () => {
     setSelectedOptions({});
@@ -125,19 +126,20 @@ const Sidebar = ({ openSection, isOpen, setIsOpen, onFilteredProducts }) => {
       }
       return newColors;
     });
-
+  
     setSelectedOptions((prevState) => {
       const currentSelection = prevState["Color"] || [];
       const newSelection = currentSelection.includes(color)
         ? currentSelection.filter((item) => item !== color)
         : [...currentSelection, color];
-
+  
       return {
         ...prevState,
         Color: newSelection,
       };
     });
   };
+  
 
 
 
